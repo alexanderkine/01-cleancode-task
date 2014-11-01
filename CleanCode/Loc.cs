@@ -20,8 +20,8 @@ namespace CleanCode
 
 		public static IEnumerable<Loc> AllBoard()
 		{
-			for (int y = 0; y < 8; y++)
-				for (int x = 0; x < 8; x++)
+			for (var y = 0; y < 8; y++)
+				for (var x = 0; x < 8; x++)
 					yield return new Loc(x, y);
 		}
 

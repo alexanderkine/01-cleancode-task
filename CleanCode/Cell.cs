@@ -22,7 +22,7 @@
 
 		public override string ToString()
 		{
-			string c = Figure == null ? " ." : " " + Figure.Sign;
+			var c = Figure == null ? " ." : " " + Figure.Sign;
 			return Color == Black ? c.ToLower() : c;
 		}
 	}

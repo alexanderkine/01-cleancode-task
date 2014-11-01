@@ -18,7 +18,7 @@ namespace CleanCode
 
 		static Figure()
 		{
-			foreach (Figure f in new[] {King, Queen, Rook, Knight, Bishop})
+			foreach (var f in new[] {King, Queen, Rook, Knight, Bishop})
 				map[f.Sign] = f;
 			map['.'] = null;
 		}
@@ -48,12 +48,12 @@ namespace CleanCode
 		
 		private static IEnumerable<Loc> MovesInOneDirection(Loc from, Board board, Loc dir, bool infinit)
 		{
-			Cell fromCell = board.Get(from);
-			for (int i = 1; i < (infinit ? 8 : 2); i++)
+			var fromCell = board.Get(from);
+			for (var i = 1; i < (infinit ? 8 : 2); i++)
 			{
 				var to = new Loc(from.X + dir.X*i, from.Y + dir.Y*i);
 				if (!to.InBoard) break;
-				Cell toCell = board.Get(to);
+				var toCell = board.Get(to);
 				if (toCell.Figure == null) yield return to;
 				else
 				{
